@@ -1,30 +1,28 @@
-const buttonClick = document.querySelector("button")
+const buttonClick = document.querySelector('button')
+let input = document.querySelector('input')
+let paragraph = document.querySelector('p')
 
-let p = document.querySelector("p")
-let input = document.querySelector("input")
+const myContacts = [
+    {name: 'Bill', phoneNumber: '(99) 99999-9999'},
+    {name: 'Job', phoneNumber: '(99) 99999-9999'},
+    {name: 'Naoki', phoneNumber: '(99) 99999-9999'},
+    {name: 'Beatriz', phoneNumber: '(99) 99999-9999'},
+    {name: 'Júlia', phoneNumber: '(99) 99999-9999'},
+    {name: 'Rútila', phoneNumber: '(99) 99999-9999'}
 
-const contacts = [
-    {
-        name: 'Tainá', number: '(88) 92348-6789',
-        name: 'Beatriz', number: '(11) 90459-2390',
-        name: 'Eduardo', number: '(12) 94567-8964',
-        name: 'Naoki', number: '(21) 98672-1256'
-    }
 ]
 
 function search(){
+    for(let i = 0; i < myContacts.length; i++){
+        if(input.value === myContacts[i].name){
+            paragraph.innerHTML = `O número de telefone de ${myContacts[i].name}   é: ${myContacts[i].phoneNumber}`
 
-   for(let i = 0; i < contacts.length; i++){
+            break
 
-    if(input.value === contacts[i].name){
-        p.innerHTML = `Contato Encontrado Nome:${contacts[i].name} Tel:${contacts[i].number}`
-
-        break
-        
-    } else {
-        p.innerHTML = 'Contato não encontrado, tente novamente'
-    }
-   }
+        } else  {
+            paragraph.innerHTML = 'Contato não encontrado, tente novamente'
+        }
+    } console.log(input.value)
 }
 
 buttonClick.addEventListener('click', search)
