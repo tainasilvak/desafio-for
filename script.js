@@ -15,7 +15,7 @@ const myContacts = [
 function search(){
     for(let i = 0; i < myContacts.length; i++){
         if(input.value === myContacts[i].name){
-            paragraph.innerHTML = `O número de telefone de ${myContacts[i].name}   é: ${myContacts[i].phoneNumber}`
+            paragraph.innerHTML = `Contato encontrado Nome: ${myContacts[i].name} e o número de telefone é: ${myContacts[i].phoneNumber}`
 
             break
 
